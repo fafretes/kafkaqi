@@ -1,7 +1,7 @@
 FROM rockylinux:9
 #FROM centos:centos7.9.2009
 LABEL maintainer="gabriel@ipvmendoza.gov.ar"
-RUN useradd kafka -m
+RUN useradd -ms /bin/bash kafka
 RUN echo 'kafka:KakFA1234' | chpasswd
 RUN usermod -aG wheel kafka
 #RUN curl https://downloads.apache.org/kafka/3.2.3/kafka_2.13-3.2.3.tgz -o ~/Downloads/kafka.tgz
