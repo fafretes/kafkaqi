@@ -23,6 +23,7 @@ RUN mv openjdk-11.0.16_8 /usr/local/openjdk-11
 RUN mv kafka_2.13-3.2.3 /opt/kafka
 RUN rm -f /opt/OpenJDK11U-jdk_x64_linux_11.0.16_8.tar.gz /opt/kafka.tgz
 RUN chown kafka:kafka /opt/kafka -R
+RUN mkdir /mnt/kafka
 RUN chown kafka:kafka /mnt/kafka -R
 COPY ./entrypoint.sh /
 RUN ["chmod", "+x", "/entrypoint.sh"]
