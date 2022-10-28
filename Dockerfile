@@ -1,5 +1,5 @@
 #FROM rockylinux:9
-FROM rockylinux:8.6-minimal
+FROM rockylinux:9.0-minimal
 #FROM centos:centos7.9.2009
 LABEL maintainer="gabriel@ipvmendoza.gov.ar"
 #RUN useradd -ms /bin/bash kafka
