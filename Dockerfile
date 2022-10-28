@@ -22,6 +22,11 @@ RUN tar xvzf /opt/OpenJDK11U-jdk_x64_linux_11.0.16_8.tar.gz
 RUN mv openjdk-11.0.16_8 /usr/local/openjdk-11
 RUN mv kafka_2.13-3.2.3 /opt/kafka
 RUN rm -f /opt/OpenJDK11U-jdk_x64_linux_11.0.16_8.tar.gz /opt/kafka.tgz
+#Agregado permisos pvc
+ARG user=kafka
+ARG group=kafka
+ARG uid=1000
+ARG gid=1000
+#Fin Agregado permisos pvc
 COPY ./entrypoint.sh /
-RUN ["chmod", "+x", "/entrypoint.sh"]
 ENTRYPOINT ["/entrypoint.sh"]
