@@ -1,8 +1,8 @@
-#FROM rockylinux:9
-FROM rockylinux:9.0-minimal
+FROM rockylinux:9
 #FROM centos:centos7.9.2009
 LABEL maintainer="gabriel@ipvmendoza.gov.ar"
 #RUN useradd -ms /bin/bash kafka
+RUN yum install tar
 RUN useradd kafka -m
 RUN echo 'kafka:KakFA1234' | chpasswd
 RUN usermod -aG wheel kafka
