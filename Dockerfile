@@ -23,12 +23,13 @@ RUN mv openjdk-11.0.16_8 /usr/local/openjdk-11
 RUN mv kafka_2.13-3.2.3 /opt/kafka
 RUN rm -f /opt/OpenJDK11U-jdk_x64_linux_11.0.16_8.tar.gz /opt/kafka.tgz
 #permisos agregados
-RUN chown -R kafka:root /mnt/kafka && \
-    chgrp -R 0 /mnt/kafka && \
-    chmod -R 775 /mnt/kafka 
 RUN chown -R kafka:root /opt/kafka && \
     chgrp -R 0 /opt/kafka && \
     chmod -R 775 /opt/kafka
+RUN mkdir /mnt/kafka && \
+    chown -R kafka:root /mnt/kafka && \
+    chgrp -R 0 /mnt/kafka && \
+    chmod -R 775 /mnt/kafka 
 #fin permisos agregados
 COPY ./entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
