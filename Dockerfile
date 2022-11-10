@@ -32,4 +32,6 @@ RUN mkdir /mnt/kafka && \
     chgrp -R 0 /mnt/kafka && \
     chmod -R 775 /mnt/kafka 
 #fin permisos agregados
-ENTRYPOINT ["/opt/kafka/entrypoint.sh"]
+WORKDIR /opt/kafka
+ENTRYPOINT ["sh", "entrypoint.sh"]
+#ENTRYPOINT ["/opt/kafka/entrypoint.sh"]
