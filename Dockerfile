@@ -32,4 +32,7 @@ RUN mkdir /mnt/kafka && \
     chmod -R 775 /mnt/kafka 
 #fin permisos agregados
 COPY ./entrypoint.sh /
+RUN chown kafka:root /entrypoint.sh \
+    chgrp 0 /entrypoint.sh \
+    chmod 775 /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]

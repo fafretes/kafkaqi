@@ -4,7 +4,7 @@ metadata:
   name: kafka-svc
   labels:
     app: kafka-app
-  namespace: t-kafka
+  namespace: plataforma-notificacion-dev
 spec:
   clusterIP: None
   ports:
